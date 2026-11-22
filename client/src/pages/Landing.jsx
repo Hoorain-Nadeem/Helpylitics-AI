@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Sparkles, ShieldCheck, Bell, MessageSquare, Trophy, Wand2, Check } from 'lucide-react';
 import HeroScene from '../components/HeroScene';
 import api from '../api';
-import './landing.css';
+import './Landing.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
