@@ -1,0 +1,216 @@
+.journey {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px clamp(18px, 5vw, 64px);
+  background: #fff;
+  border-block: 1px solid var(--line);
+}
+.journey h2 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+.jsteps {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  padding-left: 28px;
+}
+.jtrack {
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.jbar {
+  height: 100%;
+  background: var(--brand);
+  transform-origin: top;
+  transform: scaleY(0);
+}
+.jstep {
+  padding: 10px 14px;
+  border-radius: 12px;
+  opacity: 0.45;
+  transition:
+    opacity 0.25s,
+    background 0.25s;
+}
+.jstep.on {
+  opacity: 1;
+  background: var(--brand-soft);
+}
+.jstep h3 {
+  font-size: 1.05rem;
+}
+.jstep p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 2px;
+}
+.stage {
+  position: relative;
+  height: min(420px, 52vh);
+  min-height: 340px;
+  background: linear-gradient(180deg, #f8f8ff, #f1f3fb);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+}
+.panel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+.mock {
+  width: min(420px, 100%);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+  box-shadow: 0 12px 34px rgba(14, 22, 48, 0.08);
+}
+.mock-h {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.mock-h span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e3e7f0;
+}
+.mock-h b {
+  margin-left: 8px;
+  font-weight: 500;
+}
+.mock-t {
+  font-family: "Sora";
+  font-weight: 700;
+}
+.typed-wrap {
+  min-height: 64px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--brand);
+  margin-left: 2px;
+  vertical-align: -2px;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.p2 svg {
+  width: min(400px, 100%);
+  height: 100%;
+}
+.jl {
+  stroke: var(--brand);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+.nt {
+  fill: #fff;
+  font:
+    700 14px "Sora",
+    sans-serif;
+}
+.notif {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+}
+.bub {
+  max-width: 82%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  background: #eef0f6;
+}
+.bub.out {
+  background: var(--brand);
+  color: #fff;
+  justify-self: end;
+}
+.ring {
+  position: relative;
+  width: 104px;
+  height: 104px;
+}
+.ring b {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: "Sora";
+  font-size: 1.5rem;
+}
+.journey.static {
+  grid-template-columns: 1fr;
+}
+.journey.static .panel {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  padding: 14px 0;
+}
+.journey.static .stage {
+  height: auto;
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+.journey.static .jstep {
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .journey {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding-block: 24px;
+  }
+  .journey h2 {
+    margin-bottom: 14px;
+    font-size: 1.4rem;
+  }
+  .jstep p {
+    display: none;
+  }
+  .jstep.on p {
+    display: block;
+  }
+  .stage {
+    height: 330px;
+    min-height: 0;
+  }
+}
